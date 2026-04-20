@@ -1,36 +1,51 @@
 # Pooja Walia
 
-## AI Safety, Compliance, and National Security Engineering
+## AI Safety, Compliance, and Risk Engineering
 
-I build open-source tools that operationalize AI governance for regulated industries. My work focuses on translating federal policy into working software that organizations can deploy today.
-
----
-
-### What I Work On
-
-**AI Compliance and Risk Management**
-Building automated evaluation systems that assess AI against frameworks like NIST AI RMF, HIPAA, FedRAMP, and GDPR. The goal: make compliance measurable, repeatable, and accessible to teams that don't have dedicated compliance engineers.
-
-**Healthcare AI Safety**
-AI systems processing patient data carry real risk. I build tooling that catches compliance gaps before deployment -- not after a breach. This includes PHI protection validation, access control auditing, and encryption verification against HIPAA requirements.
-
-**Critical Infrastructure Protection**
-Supporting FedRAMP and NIST CSF alignment for AI systems deployed in government and defense contexts, where compliance failures have national security implications.
+I build open-source tools and contribute to federal standards that make AI governance practical for regulated industries -- healthcare, government, defense, and critical infrastructure.
 
 ---
 
-### Alignment with National Priorities
+### What I Build
 
-My work directly supports several US federal initiatives:
+**Automated AI Compliance Evaluation**
+Systems that assess AI against NIST AI RMF, HIPAA, FedRAMP, NIST CSF, ISO 27001, OWASP LLM Top 10, and GDPR. Structured prompt pipelines evaluate each control individually, produce evidence-based verdicts, and generate severity-weighted remediation plans.
 
-| Priority | How My Work Aligns |
-|----------|-------------------|
-| **EO 14110 -- Safe, Secure, and Trustworthy AI** | Automated compliance checks that map to federal AI safety guidance |
-| **NIST AI Risk Management Framework** | Production tooling that evaluates AI systems against all RMF functions |
-| **HIPAA Modernization** | AI-specific compliance evaluation for healthcare systems processing PHI |
-| **FedRAMP / Cloud Security** | Boundary protection, MFA, and audit logging validation for federal cloud AI |
-| **NIST Cybersecurity Framework** | Full Identify-Protect-Detect-Respond-Recover evaluation pipeline |
-| **GDPR Cross-Border Compliance** | Supporting US organizations operating internationally |
+**Healthcare AI Safety Tooling**
+AI systems processing patient data carry real consequences when they fail. I build tooling that validates PHI protection, access controls, encryption, audit logging, and breach notification procedures against HIPAA requirements -- catching gaps before they become incidents.
+
+**IoT Device Security for Federal Environments**
+Contributing secure boot, firmware integrity verification, safety-critical isolation, network segmentation, vulnerability disclosure, and SBOM requirements to federal IoT cybersecurity standards -- addressing gaps in how connected devices are secured in healthcare and government networks.
+
+**Healthcare Privacy Engineering**
+Building de-identification workflows, privacy risk assessments, and anonymization tooling for patient data -- applying HIPAA Safe Harbor, Expert Determination, K-Anonymity, and the NIST Privacy Risk Assessment Methodology (PRAM) to real healthcare data flows.
+
+---
+
+### Contributions to Federal Standards
+
+#### [NIST FederalProfile-8259A](https://github.com/usnistgov/FederalProfile-8259A) -- IoT Device Cybersecurity
+
+6 contributions to the federal IoT cybersecurity capability catalog:
+
+| Contribution | Area | What It Addresses |
+|-------------|------|-------------------|
+| Secure boot and firmware integrity verification | Technical / Secure Execution | No boot integrity capability existed for federal IoT devices |
+| Safety-critical isolation for medical devices | Technical / Secure Device Operation | Cybersecurity failures could disrupt patient safety in healthcare IoT |
+| Data minimization for IoT devices | Technical / Data Protection | HIPAA minimum necessary standard had no IoT equivalent in the catalog |
+| Vulnerability disclosure policies | Nontechnical / Security | No coordinated disclosure capability per OMB M-20-32 and EO 14028 |
+| SBOM software transparency | Nontechnical / Security | EO 14028 mandates SBOM; FDA requires it for medical devices |
+| Network segmentation support | Technical / Secure Communication | NIST SP 800-53 SC-7 boundary protection had no IoT device-side capability |
+
+#### [NIST PrivacyEngCollabSpace](https://github.com/usnistgov/PrivacyEngCollabSpace) -- Privacy Engineering
+
+3 healthcare-focused contributions:
+
+| Contribution | Type | What It Addresses |
+|-------------|------|-------------------|
+| Hospital EHR de-identification for research | Use Case | First entry in the empty de-identification use cases directory; covers HIPAA Safe Harbor, K-Anonymity, synthetic data, NER-based text de-identification |
+| Healthcare de-identification with ARX | Tool | HIPAA-specific configuration guide for the ARX anonymization tool; no existing tool addressed healthcare de-identification workflows |
+| Healthcare patient data privacy risk assessment | Use Case | NIST PRAM applied to patient data flows (EHR, research sharing, HIE); only the second risk assessment use case in the repository |
 
 ---
 
@@ -38,40 +53,41 @@ My work directly supports several US federal initiatives:
 
 #### [AI Compliance Copilot](https://github.com/pw0607/ai-compliance-copilot)
 
-A production-quality, multi-framework AI compliance evaluation system.
+Production-quality, multi-framework AI compliance evaluation system.
 
-- **7 frameworks**: NIST AI RMF, HIPAA, NIST CSF, FedRAMP, ISO 27001, OWASP LLM Top 10, GDPR
-- **70 controls** with severity ratings (critical / high / medium / low)
-- **Prioritized remediation plans** ranked by risk x severity
-- **Multi-framework comparison** -- evaluate against multiple frameworks simultaneously
-- **Compliance history tracking** for audit documentation
-- **PDF + JSON export** for stakeholder reporting
-- **34 automated tests** with full API coverage
-
-**Tech stack**: Python, FastAPI, Streamlit, fpdf2, Docker
-
----
-
-### Technical Focus Areas
-
-- **AI Governance Automation** -- turning policy documents into executable compliance checks
-- **LLM Security** -- prompt injection detection, output validation, OWASP LLM Top 10
-- **Regulated Industry AI** -- healthcare, government, finance, critical infrastructure
-- **Risk Quantification** -- severity-weighted scoring that gives leadership actionable metrics
-- **Open-Source Compliance Tooling** -- making AI safety accessible, not proprietary
+| Capability | Detail |
+|-----------|--------|
+| Frameworks | NIST AI RMF, HIPAA, NIST CSF, FedRAMP, ISO 27001, OWASP LLM Top 10, GDPR |
+| Controls | 70 total, each with critical/high/medium/low severity |
+| Remediation | Priority-ranked action plans (risk score x severity weight) |
+| Comparison | Evaluate against multiple frameworks simultaneously |
+| History | Track compliance posture changes across audits |
+| Export | PDF reports + structured JSON for stakeholder documentation |
+| Testing | 34 automated tests with full API coverage |
+| Stack | Python, FastAPI, Streamlit, Docker |
 
 ---
 
-### Impact by the Numbers
+### Technical Focus
 
-| Metric | Value |
-|--------|-------|
-| Compliance frameworks supported | 7 |
-| Individual controls evaluated | 70 |
-| Severity levels per control | 4 (critical, high, medium, low) |
-| Automated tests | 34 |
-| API endpoints | 6 |
-| Regulated industries covered | Healthcare, Government, Finance, Defense |
+- **AI Governance Automation** -- executable compliance checks derived from NIST AI RMF, EO 14110 guidance, and HIPAA security rules
+- **IoT Cybersecurity Standards** -- secure boot, SBOM, vulnerability disclosure, and safety-critical isolation for federal device catalogs
+- **Healthcare Privacy Engineering** -- de-identification, risk assessment, and data minimization for patient data under HIPAA
+- **Severity-Weighted Risk Scoring** -- quantified metrics that map control gaps to remediation priority
+- **LLM Security** -- prompt injection detection, output validation, and agency controls aligned with OWASP LLM Top 10
+- **Open-Source Compliance** -- making AI safety and privacy tooling accessible to organizations that can't afford proprietary GRC platforms
+
+---
+
+### By the Numbers
+
+| | |
+|---|---|
+| 7 | Compliance frameworks automated |
+| 70 | Individual controls with severity ratings |
+| 9 | Contributions to NIST federal standards (6 IoT security + 3 privacy engineering) |
+| 34 | Automated tests passing |
+| 4 | Regulated sectors covered: healthcare, government, finance, defense |
 
 ---
 
